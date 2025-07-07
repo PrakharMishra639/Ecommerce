@@ -10,7 +10,7 @@ const initialState = {
 export const getFeatureImages = createAsyncThunk(
   "/feature/getFeatureImages",
   async () => {
-    const response = await axios.get(`${API_BASE_URL}/common/feature/get`);
+    const response = await axios.get(`${API_BASE_URL}/api/common/feature/get`);
     return response.data;
   }
 );
@@ -19,9 +19,12 @@ export const getFeatureImages = createAsyncThunk(
 export const addFeatureImage = createAsyncThunk(
   "/feature/addFeatureImage",
   async (image) => {
-    const response = await axios.post(`${API_BASE_URL}/common/feature/add`, {
-      image,
-    });
+    const response = await axios.post(
+      `${API_BASE_URL}/api/common/feature/add`,
+      {
+        image,
+      }
+    );
     return response.data;
   }
 );
@@ -31,7 +34,7 @@ export const deleteFeatureImage = createAsyncThunk(
   "/feature/deleteFeatureImage",
   async (id) => {
     const response = await axios.delete(
-      `${API_BASE_URL}/common/feature/delete/${id}`
+      `${API_BASE_URL}/api/common/feature/delete/${id}`
     );
     return { id }; // We return id to remove it from state
   }

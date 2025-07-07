@@ -17,7 +17,7 @@ export const fetchAllFilteredProducts = createAsyncThunk(
     });
 
     const result = await axios.get(
-      `${API_BASE_URL}/shop/products/get?${query}`
+      `${API_BASE_URL}/api/shop/products/get?${query}`
     );
 
     console.log(result);
